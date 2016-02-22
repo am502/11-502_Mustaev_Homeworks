@@ -1,7 +1,7 @@
 package ru.itis.inform;
-public interface Graph {
+public interface DirectedGraph {
     void addVertex();
-    void addEdge(int vertexA, int vertexB, int h);
+    void addWeightEdge(int vertexA, int vertexB, int h);
     int[][] runFloyd();
     void showGraph();
 }
