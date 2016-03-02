@@ -8,26 +8,22 @@ class LinkedListIteratorImpl<T> implements Iterator<T> {
         this.current = first;
     }
 
-    @Override
     public boolean hasNext() {
         return current != null;
     }
 
-    @Override
     public T next() {
         T value = current.getValue();
         current = current.getNext();
         return value;
     }
 
-    @Override
     public T previous() {
         return current.getPrevious().getValue();
     }
 
-    @Override
     public void insert(T element) {
-        Node<T> newNode = new <T>Node(element);
+        Node<T> newNode = new Node(element);
         newNode.setNext(current);
         this.current.getPrevious().setNext(newNode);
         this.current.setPrevious(newNode);

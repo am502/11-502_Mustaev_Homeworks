@@ -2,6 +2,7 @@ package ru.itis.inform;
 
 public class LinkedList<T> implements List<T> {
     private Node<T> first;
+    private Node<T> tale;
 
     private int count;
 
@@ -22,6 +23,15 @@ public class LinkedList<T> implements List<T> {
         }
         this.count++;
     }
+
+    public Node getTale(){
+        return tale;
+    }
+
+    public Node getFirst(){
+        return first;
+    }
+
     public void remove(T element) {
         Node node = first;
         for (int i = 0; i < count ; i++) {
@@ -46,7 +56,13 @@ public class LinkedList<T> implements List<T> {
         this.count--;
     }
 
-    @Override
+    public void append(LinkedList list) {
+        this.first.setPrevious(list.getTale());
+        list.getTale().setNext(this.first);
+        this.first = list.getFirst();
+        this.count += list.getCount();
+    }
+
     public Iterator<T> iterator() {
         return new LinkedListIteratorImpl<T>(this.first);
     }
@@ -58,5 +74,9 @@ public class LinkedList<T> implements List<T> {
             node = node.getNext();
         }
         System.out.print(node.getValue());
+    }
+
+    public int getCount(){
+        return count;
     }
 }
