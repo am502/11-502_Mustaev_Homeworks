@@ -1,38 +1,60 @@
 package ru.itis.inform;
 
-class LinkedListIteratorImpl<T> implements Iterator<T> {
+public class LinkedListIteratorImpl<T> implements Iterator<T> {
 
-    Node<T> current;
+    private Node<T> current;
 
-    public LinkedListIteratorImpl(Node<T> first) {
-        this.current = first;
+    public LinkedListIteratorImpl(Node<T> head) {
+        this.current = head;
+    }
+
+    public Node<T> getCurrentNode() {
+        return current;
     }
 
     public boolean hasNext() {
         return current != null;
     }
 
+    public T peekNext() {
+        return current.getData();
+    }
+
+    public boolean hasPrevious() {
+        return this.current.getPrevious() != null;
+    }
+
+    public T peekPrevious() {
+        return current.getPrevious().getData();
+    }
+
     public T next() {
-        T value = current.getValue();
-        current = current.getNext();
+        T value = current.getData();
+        Node<T> f = current;
+        this.current = f.getNext();
         return value;
     }
 
     public T previous() {
-        return current.getPrevious().getValue();
+        if (current.getPrevious() != null) {
+            Node<T> f = this.current;
+            T value = f.getPrevious().getData();
+            this.current = f.getPrevious();
+            return value;
+        } else {
+            throw new IndexOutOfBoundsException();
+        }
     }
 
     public void insert(T element) {
-        Node<T> newNode = new Node(element);
-        newNode.setNext(current);
-        this.current.getPrevious().setNext(newNode);
-        this.current.setPrevious(newNode);
-    }
-    public T peekNext() {
-        return current.getNext().getValue();
-    }
+        Node<T> f = this.current;
+        Node<T> insertNode = new Node<T>(element);
 
-    public T peekPrevious() {
-        return current.getPrevious().getValue();
+        insertNode.setPrevious(f.getPrevious());
+        insertNode.setNext(f);
+        f.getPrevious().setNext(insertNode);
+        f.setPrevious(insertNode);
+
+        current = f.getPrevious();
     }
 }

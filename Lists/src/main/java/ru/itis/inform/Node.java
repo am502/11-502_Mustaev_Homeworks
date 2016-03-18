@@ -1,33 +1,31 @@
 package ru.itis.inform;
 
 public class Node<T> {
+    Node<T> next;
+    Node<T> previous;
+    T data;
 
-    private T value;
-    private Node<T> next;
-    private Node<T> previous;
-
-    public Node(T value) {
-        this.value = value;
-        this.next = null;
+    public Node(T element){
+        this.data = element;
     }
 
-    public void setNext(Node next) {
-        this.next  = next;
+    public T getData(){
+        return data;
     }
 
-    public T getValue() {
-        return value;
-    }
-
-    public Node<T> getNext() {
+    public Node<T> getNext(){
         return next;
     }
 
-    public Node<T> getPrevious() {
-        return previous;
+    public void setNext(Node next){
+        this.next = next;
     }
 
     public void setPrevious(Node previous) {
         this.previous = previous;
+    }
+
+    public Node<T> getPrevious() {
+        return previous;
     }
 }
