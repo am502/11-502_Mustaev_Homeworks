@@ -37,11 +37,18 @@ public class Dictionary {
             list1.add(list.get(i));
 
         for(int i = 0; i < list1.size(); i++){
+            int k = 0;
             for(int j = i + 1; j < list1.size(); j++){
+                String temp = list1.get(i).getK();
                 if(list1.get(j).getK().equals(list1.get(i).getK())){
                     list1.remove(j);
                     j = i;
+                    k++;
                 }
+            }
+            if(k > 0) {
+                list1.remove(i);
+                i = 0;
             }
         }
 
