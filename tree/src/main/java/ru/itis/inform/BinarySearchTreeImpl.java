@@ -14,8 +14,19 @@ public class BinarySearchTreeImpl {
         } else {
             root.setRight(insertNode(root.getRight(), element));
         }
+        setLevels(root, 0);
 
         return root;
+    }
+
+    public void setLevels(Node root, int level){
+        if (root != null) {
+            setLevels(root.getRight(), level + 1);
+
+            root.setLevel(level);
+
+            setLevels(root.getLeft(), level + 1);
+        }
     }
 
     private void showRec(Node root, int level) {
@@ -27,7 +38,6 @@ public class BinarySearchTreeImpl {
             }
 
             System.out.println(root.getData());
-            root.setLevel(level);
 
             showRec(root.getLeft(), level + 1);
         }
@@ -93,8 +103,6 @@ public class BinarySearchTreeImpl {
                 q.add(x.getRight());
 
             list.add(x);
-
-            //System.out.println(x.toString());
         }
 
         int maxlevel = list.get(list.size() - 1).getLevel();

@@ -17,14 +17,6 @@ public class Main {
 
         System.out.println(tree.sumator());
 
-        System.out.println("\n"+"-------------"+"\n");
-
         tree.change();
-
-        tree.show();
-
-        System.out.println(tree.isBinarySearchTree());
-
-        System.out.println(tree.sumator());
     }
 }
