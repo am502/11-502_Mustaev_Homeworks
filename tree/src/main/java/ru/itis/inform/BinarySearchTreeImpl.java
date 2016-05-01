@@ -2,8 +2,7 @@ package ru.itis.inform;
 
 import java.util.*;
 
-public class BinarySearchTreeImpl {
-
+public class BinarySearchTreeImpl implements BinarySearchTree {
     private  Node root;
 
     private Node insertNode(Node root, int element) {
@@ -68,13 +67,8 @@ public class BinarySearchTreeImpl {
 
     }
 
-    public void change(){
-        root.getLeft().setData(16);
-    }
-
     public boolean isBinarySearchTree(){
         boolean check = true;
-
         ArrayList<Integer> array = new ArrayList<Integer>();
         inOrder(root, array);
 
@@ -87,29 +81,22 @@ public class BinarySearchTreeImpl {
 
     public boolean sumator(){
         Queue<Node> q = new LinkedList<Node>();
-        boolean b = true;
+        boolean check = true;
         LinkedList<Node> list = new LinkedList<Node>();
-
         q.add(root);
 
         while(! q.isEmpty()){
-
             Node x = q.poll();
-
             if(x.getLeft() != null)
                 q.add(x.getLeft());
-
             if(x.getRight() != null)
                 q.add(x.getRight());
-
             list.add(x);
         }
 
         int maxlevel = list.get(list.size() - 1).getLevel();
         int sumator = 0;
-
         LinkedList<Integer> sum = new LinkedList<Integer>();
-
         for(int i = 0; i <= maxlevel; i++){
             sumator = 0;
             for(int j = 0; j < list.size(); j++){
@@ -119,12 +106,11 @@ public class BinarySearchTreeImpl {
             }
             sum.add(sumator);
         }
-
         for(int i = 0; i < sum.size() - 1; i++){
             if(sum.get(i) > sum.get(i + 1))
-                b = false;
+                check = false;
         }
 
-        return b;
+        return check;
     }
 }

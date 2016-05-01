@@ -1,7 +1,5 @@
 package ru.itis.inform;
 
-import java.util.Arrays;
-
 public class Graph {
 
     private static final int DEFAULT_SIZE = 50;

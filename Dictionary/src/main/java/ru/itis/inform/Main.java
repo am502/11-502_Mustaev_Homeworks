@@ -1,7 +1,6 @@
 package ru.itis.inform;
 
 import java.io.*;
-import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
@@ -27,7 +26,8 @@ public class Main {
 
         String g = "ya bistriy i dobriy chelovek";
 
-        System.out.println("\n" + "Translated text: " + "\n" + d.translate(g));
+        System.out.println("\n" + "Source text: " + "\n" + g);
 
+        System.out.println("\n" + "Translated text: " + "\n" + d.translate(g));
     }
 }

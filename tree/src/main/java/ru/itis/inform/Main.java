@@ -1,10 +1,8 @@
 package ru.itis.inform;
 
-import java.util.Queue;
-
 public class Main {
     public static void main(String[] args) {
-        BinarySearchTreeImpl tree = new BinarySearchTreeImpl();
+        BinarySearchTree tree = new BinarySearchTreeImpl();
 
         int array[] = {8, 10, 14, 1, 13, 6, 4, 7, 3};
         for (int i = 0; i < array.length; i++) {
@@ -16,7 +14,5 @@ public class Main {
         System.out.println(tree.isBinarySearchTree());
 
         System.out.println(tree.sumator());
-
-        tree.change();
     }
 }

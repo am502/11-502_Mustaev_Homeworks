@@ -42,9 +42,4 @@ public class Node {
     public void setLevel(int level){
         this.level = level;
     }
-
-    @Override
-    public String toString(){
-        return data+ " lvl " + level;
-    }
 }
