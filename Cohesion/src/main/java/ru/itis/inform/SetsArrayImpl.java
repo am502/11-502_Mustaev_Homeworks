@@ -40,15 +40,15 @@ public class SetsArrayImpl implements Sets {
                         x = pairs.get(i).getB();
                         checkForD(array, x);
                         array.add(x);
-                        if(x == vertexB)
-                            break;
+//                        if(x == vertexB)
+//                            break;
                     }
                     else if(x == pairs.get(i).getB()){
                         x = pairs.get(i).getA();
                         checkForD(array, x);
                         array.add(x);
-                        if(x == vertexB)
-                            break;
+//                        if(x == vertexB)
+//                            break;
                     }
                 }
             }
