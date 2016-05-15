@@ -1,6 +1,6 @@
 package ru.itis.inform;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class SetsArrayImpl implements Sets {
     private int[] sets;

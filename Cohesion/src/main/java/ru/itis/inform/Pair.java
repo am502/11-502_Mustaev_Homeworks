@@ -1,6 +1,6 @@
 package ru.itis.inform;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Pair {
     private int a;
