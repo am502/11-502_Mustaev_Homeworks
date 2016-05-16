@@ -1,6 +1,6 @@
 package ru.itis.inform;
 
-public class TokenizeObserver {
+public class TokenizerObserver {
     public void handleDigits(String digits){
         System.out.println("Digits: " + digits);
     }

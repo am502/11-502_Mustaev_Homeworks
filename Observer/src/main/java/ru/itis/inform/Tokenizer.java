@@ -1,12 +1,10 @@
 package ru.itis.inform;
 
 public class Tokenizer {
-//    private TokenizeObserver t;
-//    public Tokenizer(TokenizeObserver t){
-//        t = new TokenizeObserver();
-//    }
-
-    TokenizeObserver t = new TokenizeObserver();
+    private TokenizerObserver t;
+    public Tokenizer(TokenizerObserver t){
+        this.t = t;
+    }
 
     public void process(String text){
         String l = "";
