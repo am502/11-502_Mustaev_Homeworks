@@ -1,0 +1,6 @@
+1  age  
+1  df  
+2  agt  
+3  aht  
+3  dfdfd  
+6  gf  
