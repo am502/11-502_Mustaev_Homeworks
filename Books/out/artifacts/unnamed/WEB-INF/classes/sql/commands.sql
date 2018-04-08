@@ -1,0 +1,1 @@
+CREATE TABLE books (id SERIAL INT, name VARCHAR(30), price VARCHAR(10));
